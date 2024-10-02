@@ -11,17 +11,17 @@ This project sets up a Kafka broker on a Kubernetes cluster using Terraform and 
 ## Setup
 
 1. **Create the Kind Cluster**:
-   \`\`\`sh
-   cd terraform
-   terraform init
-   terraform apply
-   \`\`\`
+   ```sh
+      cd terraform
+      terraform init
+      terraform apply
+   ```
 
 2. **Deploy Kafka**:
-   \`\`\`sh
+   ```sh
    cd ../k8s
    kubectl apply -f kafka-deployment.yaml
-   \`\`\`
+   ```
 
 ## Structure
 
