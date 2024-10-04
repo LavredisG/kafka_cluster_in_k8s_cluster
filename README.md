@@ -8,7 +8,7 @@ display them in real time on our browser using websockets.
 
 - Terraform (v1.9.6)
 - kubectl (v1.30.3)
-- kind (v0.23.0)
+- kind (v0.23.0) -> (deploys k8s v1.30.0 images)
 - Helm (v3.16.1)
 - Go (v1.22.6)
 
@@ -25,13 +25,18 @@ First of all we have to clone the repo on our system (project was set up on Ubun
 
 We now have a cluster consisting of a control plane and a worker node.
 
+![github1](https://github.com/user-attachments/assets/c961adb0-859c-4489-981c-e194ae2c9de0)
+
+We should create a <b>kafka</b> namespace for easier management of our resources at this point:
+
+```sh
+kubectl create namespace kafka
+```
+
 2. **Deploy Kafka**:
    ```sh
-   cd ../k8s
-   kubectl apply -f kafka-deployment.yaml
+   helm repo add bitnami https://charts.bitnami.com/bitnami
+   helm install my-kafka oci://registry-1.docker.io/bitnamicharts/kafka -n kafka -f helm/values.yml
    ```
+   
 
-## Structure
-
-- \`terraform/\`: Contains Terraform configuration files for setting up the Kind cluster.
-- \`k8s/\`: Contains Kubernetes manifests for deploying Kafka.
