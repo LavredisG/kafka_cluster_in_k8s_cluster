@@ -30,8 +30,6 @@ spec:
               value: kafka-svc
             - name: NAMESPACE
               value: kafka
-            - name: SHARE_DIR
-              value: /mnt/kafka
             - name: CLUSTER_ID
               value: bXktY2x1c3Rlci0xMjM0NQ==
             - name: DEFAULT_REPLICATION_FACTOR

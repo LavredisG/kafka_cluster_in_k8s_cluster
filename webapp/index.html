@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kafka Messages</title>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var socket = new WebSocket('ws://' + window.location.host + '/ws');
+            socket.onmessage = function(event) {
+                var messages = document.getElementById('messages');
+                var message = document.createElement('li');
+                message.textContent = event.data;
+                messages.appendChild(message);
+            };
+        });
+    </script>
+</head>
+<body>
+    <h1>Kafka Messages</h1>
+    <ul id="messages"></ul>
+</body>
+</html>

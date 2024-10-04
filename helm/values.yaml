@@ -1,0 +1,32 @@
+# https://developer.mamezou-tech.com/en/blogs/2024/06/24/kafka-kraft-mode-in-containers/
+externalAccess:
+  enabled: true
+  controller:
+    service:
+      type: NodePort
+  broker:
+    service:
+      type: NodePort
+  autoDiscovery:
+    enabled: true
+
+rbac:
+  create: true
+
+controller:
+  automountServiceAccountToken: true
+  replicaCount: 1
+
+broker:
+  automountServiceAccountToken: true
+
+listeners:
+  client:
+    protocol: PLAINTEXT
+  external:
+    protocol: PLAINTEXT
+
+# https://stackoverflow.com/questions/77387244/unable-to-read-messages-from-kafka-server
+extraConfig: |
+  offsets.topic.replication.factor=1
+  transaction.state.log.replication.factor=1
