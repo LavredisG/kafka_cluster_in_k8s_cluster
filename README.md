@@ -74,8 +74,37 @@ kubectl exec -it my-kafka-controller-0 -- cat /opt/bitnami/kafka/config/server.p
 
 ![image](https://github.com/user-attachments/assets/c8a0f509-10ae-474f-b7d1-02964a9a7c60)
 
-We can see that the external advertised listener in on <b>172.18.0.2:31551</b>, which
-is what we will use to connect from our app as seen below:
+We can see that the external advertised listener in on <b>172.18.0.3:31551</b>,
+(\<node IP on which the kafka broker pod is deployed\>:\<exposed PORT\>) which is
+what we will use to connect from our app as seen below:
+
+![image](https://github.com/user-attachments/assets/ce31973d-be48-4480-a3b8-e478be5973b3)
+
+To deploy the server:
+```sh
+cd webapp
+go run app.go
+```
+
+The server now listens on <b>localhost:8080</b>.
+
+4. **Real time message producing/consuming**:
+
+We open a second terminal on which we have to log back in the kafka-client pod
+and execute the producer script:
+
+```sh
+kubectl exec --tty -i my-kafka-client --namespace kafka -- bash
+kafka-console-producer.sh --broker-list my-kafka-controller-0.my-kafka-controller-headless.kafka.svc.cluster.local:9092 --topic test
+```
+
+This is our final result taking place in real time:
+
+![image](https://github.com/user-attachments/assets/691a5d5d-136f-49b0-b055-de13ad8ca823)
+
+
+
+
 
 
 
