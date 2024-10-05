@@ -4,9 +4,6 @@ externalAccess:
   controller:
     service:
       type: NodePort
-  broker:
-    service:
-      type: NodePort
   autoDiscovery:
     enabled: true
 
@@ -16,9 +13,6 @@ rbac:
 controller:
   automountServiceAccountToken: true
   replicaCount: 1
-
-broker:
-  automountServiceAccountToken: true
 
 listeners:
   client:
