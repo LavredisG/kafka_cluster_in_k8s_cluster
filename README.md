@@ -107,7 +107,7 @@ This is our final result taking place in real time:
 
 ## Troubleshooting
 
-- In case you already had a cluster, you may have to execute <b>docker system prune<b>
+- In case you already had a cluster, you may have to execute <i><b>docker system prune</b></i>
 so that every resource related to the previous cluster has being deleted.
 
 
