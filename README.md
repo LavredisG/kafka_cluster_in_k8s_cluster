@@ -14,7 +14,8 @@ display them in real time on our browser using websockets.
 
 ## Setup
 
-First of all we have to clone the repo on our system (project was set up on Ubuntu 22.04).
+First of all we have to clone the repo on our system (project was set up on Ubuntu 22.04
+instance running on a WSL2 machine on Windows 10).
 
 1. **Create the Kind Cluster**:
    ```sh
