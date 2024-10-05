@@ -1,7 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kafka Messages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+        }
+
+        #messages {
+            list-style: none;
+            padding: 0;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #messages li {
+            padding: 10px;
+            border-bottom: 1px solid #e1e4e8;
+            font-size: 18px;
+        }
+
+        #messages li:last-child {
+            border-bottom: none;
+        }
+
+        /* Smooth animation for adding messages */
+        #messages li {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', (event) => {
             var socket = new WebSocket('ws://' + window.location.host + '/ws');
@@ -15,7 +69,9 @@
     </script>
 </head>
 <body>
+
     <h1>Kafka Messages</h1>
     <ul id="messages"></ul>
+
 </body>
 </html>
