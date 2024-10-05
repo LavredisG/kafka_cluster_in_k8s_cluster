@@ -6,11 +6,11 @@ display them in real time on our browser using websockets.
 
 ## Prerequisites
 
-- Terraform (v1.9.6)
-- kubectl (v1.30.3)
-- kind (v0.23.0) -> (deploys k8s v1.30.0 images)
-- Helm (v3.16.1)
-- Go (v1.22.6)
+- [Terraform (v1.9.6)](https://developer.hashicorp.com/terraform/install?product_intent=terraform)
+- [kubectl (v1.30.3)](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [kind (v0.23.0) -> (deploys k8s v1.30.0 images)](https://kind.sigs.k8s.io/)
+- [Helm (v3.16.1)](https://helm.sh/docs/intro/install/)
+- [Go (v1.22.6)](https://go.dev/doc/install)
 
 ## Setup
 
@@ -103,7 +103,10 @@ This is our final result taking place in real time:
 ![image](https://github.com/user-attachments/assets/691a5d5d-136f-49b0-b055-de13ad8ca823)
 
 
+## Troubleshooting
 
+- In case you already had a cluster, you may have to execute <b>docker system prune<b>
+so that every resource related to the previous cluster has being deleted.
 
 
 
