@@ -101,7 +101,8 @@ kafka-console-producer.sh --broker-list my-kafka-controller-0.my-kafka-controlle
 
 This is our final result taking place in real time:
 
-![image](https://github.com/user-attachments/assets/691a5d5d-136f-49b0-b055-de13ad8ca823)
+![image](https://github.com/user-attachments/assets/4f218b71-d3de-448d-bb3e-b7ffde192e59)
+
 
 
 ## Troubleshooting
