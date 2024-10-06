@@ -37,7 +37,7 @@ kubectl create namespace kafka
 2. **Deploy Kafka**:
    ```sh
    helm repo add bitnami https://charts.bitnami.com/bitnami
-   helm install my-kafka oci://registry-1.docker.io/bitnamicharts/kafka -n kafka -f helm/values.yml
+   helm install my-kafka oci://registry-1.docker.io/bitnamicharts/kafka -n kafka -f helm/values.yaml
    ```
 
 We can now view our release:
