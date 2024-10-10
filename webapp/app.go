@@ -1,3 +1,8 @@
+// Sources:
+// Server: https://github.com/gin-gonic/examples/blob/master/graceful-shutdown/graceful-shutdown/notify-without-context/server.go
+// Kafka client: https://developer.confluent.io/get-started/go/?session_ref=https://www.google.com/#build-consumer
+// Websockets: https://github.com/gorilla/websocket/blob/main/examples/echo/server.go
+
 package main
 
 import (
