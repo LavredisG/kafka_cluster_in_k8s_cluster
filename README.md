@@ -1,8 +1,8 @@
 # Kafka-Kubernetes cluster
 
-This project sets up a Kafka cluster with a single broker on a Kubernetes cluster
+This project sets up a single broker Kafka cluster on a 2 node Kubernetes cluster
 and deploys a webapp which consumes messages from the broker's topic in order to
-display them in real time on our browser using websockets.
+display them in real time on our browser using websockets on localhost:8080.
 
 ## Prerequisites
 
@@ -75,9 +75,11 @@ kubectl exec -it my-kafka-controller-0 -- cat /opt/bitnami/kafka/config/server.p
 
 ![image](https://github.com/user-attachments/assets/c8a0f509-10ae-474f-b7d1-02964a9a7c60)
 
-We can see that the external advertised listener in on <b>172.18.0.3:31551</b>,
-(\<node IP on which the kafka broker pod is deployed\>:\<exposed PORT\>) which is
-what we will use to connect from our app as seen below:
+We can see that the external advertised listener in on 172.18.0.2:31551,
+(<node IP on which the kafka broker pod is deployed>:<exposed PORT>). However,
+our app will target 172.18.0.3:31551 which is Control Plane node's IP address, while
+172.18.0.2 is Worker node's IP address on which kafka pod is deployed. Kubernetes
+networking will take care of properly forwarding our request to the right node
 
 ![image](https://github.com/user-attachments/assets/ce31973d-be48-4480-a3b8-e478be5973b3)
 
