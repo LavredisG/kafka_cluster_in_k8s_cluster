@@ -26,7 +26,8 @@ instance running on a WSL2 machine on Windows 10).
 
 We now have a cluster consisting of a control plane and a worker node:
 
-![github1](https://github.com/user-attachments/assets/c961adb0-859c-4489-981c-e194ae2c9de0)
+![edit](https://github.com/user-attachments/assets/7d59f8be-b1f2-4009-af14-c833540784c7)
+
 
 We should create a <b>kafka</b> namespace for easier management of our resources at this point:
 
